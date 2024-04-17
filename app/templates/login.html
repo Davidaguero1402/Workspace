@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="">
+</head>
+<body>
+    <!-- En el caso de ser un login incorrecto recibe un mensaje "msg" y lo muestra aca-->
+    {% if msg %}
+    <p class="msg">{{ msg }}</p>
+    {% endif %}
+    
+
+    <div class="recuadro-login">
+        <div class="imagen_sin_fondo">
+            <img src="{{ url_for('static', filename='logo_optimizado_1920x1080_sin_fondo.png') }}">
+        </div>
+        <div class="form-input">
+
+            <form action="{{url_for('loginForm')}}" method="POST">
+                
+                
+                <label type="text-usuario" style="margin-left: 5%;">Usuario</label>
+                <br> <!-- Salto de línea -->
+                <input class="input-login" type="uduario" id="usuario" name="usuario">
+                <br> <!-- Salto de línea -->
+                <br> <!-- Salto de línea -->
+                <label type="text-contraseña" style="margin-left: 5%;">Contraseña</label>
+                <br> <!-- Salto de línea -->
+                <input class="input-login" type="password" id="contraseña" name="contraseña">
+                <br> <!-- Salto de línea -->
+                <br> <!-- Salto de línea -->
+                <input class="boton-ingresar" type="submit" value="Ingresar">
+            
+                <!-- El siguiente es un codigo de java script-->
+
+            </form>
+            
+            <!-- las siguientes lineas no van están mal-->
+            <!-- ahora el redireccionmiento lo hago desde la aplicacion flask y no desde aca -->
+            <!-- aparte de que el sigueinte concepto es incorrecto porque para ir a la pagina tengo que acer click-->
+            {% if resultado == "Verdadero" %}
+                <a href="selectturno.html"></a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
