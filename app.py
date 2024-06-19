@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 
-import mysql.connector
-
 from app import create_app,db
+
 app =  create_app()
 app.app_context().push()
 
@@ -45,6 +44,6 @@ def reservas():
     return render_template('reservas.html',dia=dia)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000) 
+    app.run(debug=True, host= '0.0.0.0', port=5000) 
     print("hello world")
     
