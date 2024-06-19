@@ -1,4 +1,4 @@
-cambios que hice sin willy
+Cambios y Correcciones
 
 archivo: app/__init__.py
 
